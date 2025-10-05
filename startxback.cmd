@@ -60,6 +60,7 @@ function Install-License($registryPath) {
 
 Write-Host "Killing processes"
 cmd.exe /c taskkill /f /im explorer.exe | Out-Null
+cmd.exe /c taskkill /f /im shellhost.exe | Out-Null
 Stop-Process -Name StartIsBackCfg -ErrorAction SilentlyContinue
 Stop-Process -Name StartAllBackCfg -ErrorAction SilentlyContinue
 Sleep 1
